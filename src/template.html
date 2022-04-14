@@ -1,0 +1,48 @@
+<style id="{{layout.qInfo.qId}}-css">
+  {
+      {
+      layout.prop.customcss.switch==true ? customcss: ''
+    }
+  }
+
+    {
+      {
+      layout.showTitles==false ? 'div[tid="'+qId+'"] .object-wrapper > .qv-object-wrapper > .qv-object > .qv-inner-object > .qv-object-header {display:none!important;}': ''
+    }
+  }
+</style>
+<div qv-requirements="" ng-if="init" class="requirements-wrapper">
+  <div class="requirements" style="display: inline-table; padding-bottom: 0px;">
+    <img src="/extensions/dyn_grouped_container/grouped.png" style="width: 35%;"></img>
+    <div class="dyn-grouped-container-info">
+      <button ng-if="init" class="add-button lui-button" ng-click="showAddMasterItemsDialog($event)"
+        style="background-color: white;">Select Master items</button>
+      <hr><b>Select</b> and <b>add</b> required Master items. All items will be <b>positioned automatically</b>.
+    </div>
+  </div>
+</div>
+<div class="dyn-grouped-container-background" ng-if="layout.prop.background.switch == true" ng-style="backgroundcss">
+</div>
+<div qv-extension class="dyn-grouped-container-main" ng-if="(layout.mobile.switch == false || mobileMode == false)"
+  style="{{layout.sytleContainer}}">
+  <div id="{{qId}}{{$index}_content}" style="
+  width:{{div.width}};
+  height:{{div.height}};
+  border-width:{{div.border.switch == true ? div.border.width : ''}};
+  border-color:{{div.border.switch == true ? div.border.color.color : ''}};
+  border-style:{{div.border.switch == true ? div.border.style : ''}};
+  border-radius:{{div.border.switch == true ? div.border.radius : ''}};
+  {{div.style}}"
+    class="dyn-grouped-container-flex-item {{div.background.switch == true ? 'dyn-grouped-container-no-bg' : ''}}"
+    ng-repeat="div in layout.alternatives track by $index">
+    <div id="{{qId}}{{$index}}_button" ng-click="toggleButton($event)" ng-style="styles.backgroundColor"
+      style=" position: relative; right: 50px; float: right; z-index: inherit;">
+      <a id="{{layout.alternatives[$index].masterItem}}" idCont="{{qId}}{{$index}}" class="lui-icon lui-icon--table white border" title="View data"></a>
+    </div>
+    <div id="{{qId}}{{$index}}" style="
+      position: relative;
+      width: 100%;
+      height: 95%;">
+    </div>
+  </div>
+</div>

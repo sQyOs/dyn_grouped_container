@@ -1,0 +1,3 @@
+C:\Users\evgenii.lykov\Documents\grouped extension\grouped-container-main\obj\Release\GroupedContainer.njsproj.AssemblyReference.cache
+C:\Users\evgenii.lykov\Documents\grouped extension\grouped-container-main\obj\Release\GroupedContainer.njsproj.CoreCompileInputs.cache
+C:\Users\evgenii.lykov\Documents\grouped extension\grouped-container-main\bin\Microsoft.NodejsTools.WebRole.dll
